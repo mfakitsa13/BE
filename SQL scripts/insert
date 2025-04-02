@@ -1,0 +1,11 @@
+-- Εισαγωγή σχολής οδηγών
+INSERT INTO driving_schools (name, location, phone) 
+VALUES ('Drive Safe', 'Athens', '2101234567');
+
+-- Εισαγωγή μαθητή
+INSERT INTO students (afm, first_name, last_name, date_of_birth, driving_school_id) 
+VALUES ('123456789', 'Giannis', 'Papadopoulos', '2000-05-20', 1);
+
+-- Εισαγωγή χρήστη
+INSERT INTO users (email, password) 
+VALUES ('user@example.com', 'securepassword');
