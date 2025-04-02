@@ -10,5 +10,5 @@ WHERE id = 1;
 
 -- Αλλαγή email χρήστη
 UPDATE users 
-SET email = 'newemail@example.com' 
+SET email = 'newexample@example.com' 
 WHERE id = 1;
