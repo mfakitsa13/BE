@@ -1,0 +1,11 @@
+-- Διαγραφή σχολής οδηγών (θα διαγράψει και τους μαθητές της λόγω CASCADE)
+DELETE FROM driving_schools 
+WHERE id = 1;
+
+-- Διαγραφή μαθητή
+DELETE FROM students 
+WHERE id = 1;
+
+-- Διαγραφή χρήστη
+DELETE FROM users 
+WHERE id = 1;
