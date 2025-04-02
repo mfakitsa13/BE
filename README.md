@@ -34,9 +34,13 @@ POST /api/auth/refresh - Ανανεώστε το JWT token χρησιμοποι�
 
 Driving Schools:
 GET /api/driving-schools - Λήψη όλων των σχολών οδήγησης.
+
 POST /api/driving-schools - Δημιουργία νέας σχολής οδήγησης.
+
 GET /api/driving-schools/{id} - Λήψη σχολής οδήγησης με ID.
+
 PUT /api/driving-schools/{id} - Ενημέρωση στοιχείων σχολής οδήγησης.
+
 DELETE /api/driving-schools/{id} - Διαγραφή σχολής οδήγησης.
 
 Students:
