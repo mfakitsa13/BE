@@ -96,9 +96,4 @@ PUT /api/students/{id}
 DELETE /api/students/{id}
 ```
 
-#### Delete a student
-```http
-DELETE /api/students/{id}
-```
-Διαγραφή μαθητή.
 
