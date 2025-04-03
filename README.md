@@ -1,66 +1,109 @@
-Σύστημα Σχολών Οδήγησης
+# Σύστημα Σχολών Οδήγησης
 
-Αυτό το project είναι μια εφαρμογή Spring Boot που επιτρέπει τη διαχείριση σχολών οδήγησης και μαθητών. Υποστηρίζει λειτουργίες όπως αυθεντικοποίηση JWT, διαχείριση χρηστών με κρυπτογράφηση κωδικών(sha-256 hashed), και CRUD λειτουργίες για σχολές οδήγησης και μαθητές.
+Αυτό το project είναι μια εφαρμογή Spring Boot που επιτρέπει τη διαχείριση σχολών οδήγησης και μαθητών. Υποστηρίζει λειτουργίες όπως αυθεντικοποίηση JWT, διαχείριση χρηστών με κρυπτογράφηση κωδικών (SHA-256 hashed) και CRUD λειτουργίες για σχολές οδήγησης και μαθητές.
 
-ΧΑΡΑΚΤΗΡΙΣΤΚΑ
+## Χαρακτηριστικά
 
-Αυθεντικοποίηση Χρηστών:
+### Αυθεντικοποίηση Χρηστών
+- Ασφαλής κρυπτογράφηση κωδικών (SHA-256).
+- Δημιουργία και ανανέωση JWT για πρόσβαση στο σύστημα.
 
--Mε ασφαλή κρυπτογράφηση κωδικών (SHA-256).
+### Διαχείριση Σχολών Οδήγησης
+- CRUD λειτουργίες για την προσθήκη, ενημέρωση και διαγραφή σχολών οδήγησης.
 
--Δημιουργία και ανανέωση JWT για πρόσβαση στο σύστημα.
+### Διαχείριση Μαθητών
+- CRUD λειτουργίες για την προσθήκη, ενημέρωση και διαγραφή μαθητών.
 
-Διαχείριση Σχολών Οδήγησης:
+### CORS
+- Ρυθμίσεις CORS για επικοινωνία με frontend εφαρμογή.
 
--CRUD λειτουργίες για την προσθήκη, ενημέρωση, και διαγραφή σχολών οδήγησης.
+## Τεχνολογίες που χρησιμοποιήθηκαν
 
-Διαχείριση Μαθητών:
+- **Java 17**
+- **Spring Boot**
+- **Spring Security** (JWT Authentication)
+- **JPA / Hibernate** για αλληλεπίδραση με τη βάση δεδομένων.
+- **Lombok** για την απλοποίηση του κώδικα (getters/setters, constructors).
 
--CRUD λειτουργίες για την προσθήκη, ενημέρωση, και διαγραφή μαθητών.
+Η εφαρμογή τρέχει στο `http://localhost:8080`.
 
-CORS:
+## API Endpoints
 
--Ρυθμίσεις CORS για επικοινωνία με frontend εφαρμογή.
+### Authentication
 
+#### Login
+```http
+POST /api/auth/login
+```
+Αυθεντικοποίηση χρήστη και επιστροφή JWT.
 
-Τεχνολογίες που χρησιμοποιήθηκαν:
+#### Refresh Token
+```http
+POST /api/auth/refresh
+```
+Ανανέωση του JWT token χρησιμοποιώντας το refresh token.
 
--Java 17
+### Driving Schools
 
--Spring Boot
+#### Get all driving schools
+```http
+GET /api/driving-schools
+```
+Λήψη όλων των σχολών οδήγησης.
 
--Spring Security (JWT Authentication)
+#### Create a new driving school
+```http
+POST /api/driving-schools
+```
+Δημιουργία νέας σχολής οδήγησης.
 
--JPA / Hibernate για αλληλεπίδραση με τη βάση δεδομένων.
+#### Get a driving school by ID
+```http
+GET /api/driving-schools/{id}
+```
+Λήψη σχολής οδήγησης με ID.
 
--Lombok για την απλοποίηση του κώδικα (getters/setters, constructors).
+#### Update a driving school
+```http
+PUT /api/driving-schools/{id}
+```
+Ενημέρωση στοιχείων σχολής οδήγησης.
 
+#### Delete a driving school
+```http
+DELETE /api/driving-schools/{id}
+```
+Διαγραφή σχολής οδήγησης.
 
-Η εφαρμογή τρέχει στο http://localhost:8080.
+### Students
 
-API Endpoints
+#### Get all students
+```http
+GET /api/students
+```
+Λήψη όλων των μαθητών.
 
-Login:
+#### Get a student by ID
+```http
+GET /api/students/{id}
+```
+Λήψη μαθητή με ID.
 
-POST /api/auth/login - Αυθεντικοποίηση χρήστη και επιστροφή JWT.
+#### Create a new student
+```http
+POST /api/students
+```
+Δημιουργία νέου μαθητή.
 
-Refresh Token:
+#### Update a student
+```http
+PUT /api/students/{id}
+```
+Ενημέρωση στοιχείων μαθητή.
 
-POST /api/auth/refresh - Ανανεώστε το JWT token χρησιμοποιώντας το refresh token.
-
-Driving Schools:
--GET /api/driving-schools - Λήψη όλων των σχολών οδήγησης.
--POST /api/driving-schools - Δημιουργία νέας σχολής οδήγησης.
--GET /api/driving-schools/{id} - Λήψη σχολής οδήγησης με ID.
--PUT /api/driving-schools/{id} - Ενημέρωση στοιχείων σχολής οδήγησης.
--DELETE /api/driving-schools/{id} - Διαγραφή σχολής οδήγησης.
-
-Students:
--GET /api/students - Λήψη όλων των μαθητών.
--GET /api/students/{id} - Λήψη μαθητή με ID.
--POST /api/students - Δημιουργία νέου μαθητή.
--PUT /api/students/{id} - Ενημέρωση στοιχείων μαθητή.
--DELETE /api/students/{id} - Διαγραφή μαθητή
-
-
+#### Delete a student
+```http
+DELETE /api/students/{id}
+```
+Διαγραφή μαθητή.
 
