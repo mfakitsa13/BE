@@ -1,3 +1,4 @@
+--Δημιουργία πίνακα σχολών οδηγών
 CREATE TABLE driving_schools (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
@@ -5,6 +6,7 @@ CREATE TABLE driving_schools (
     phone VARCHAR(255)
 );
 
+--Δημιουργία πίνακα μαθητών
 CREATE TABLE students (
     id SERIAL PRIMARY KEY,
     afm VARCHAR(9) UNIQUE NOT NULL,
@@ -14,6 +16,7 @@ CREATE TABLE students (
     driving_school_name VARCHAR(255) REFERENCES driving_schools(name) ON DELETE CASCADE
 );
 
+--Δημιουργία πίνακα χρηστών
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
     email VARCHAR(255) UNIQUE NOT NULL,
