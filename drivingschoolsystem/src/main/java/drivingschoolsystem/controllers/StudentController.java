@@ -16,19 +16,18 @@ public class StudentController {
 
     private final StudentService studentService;
 
-    // Δεν χρειάζεται πλέον το DrivingSchoolRepository
+
     public StudentController(StudentService studentService) {
         this.studentService = studentService;
-        System.out.println("🚗 StudentController loaded!");
+        System.out.println(" StudentController loaded!");
     }
 
-    // Get all students
+
     @GetMapping
     public List<Student> getAllStudents() {
         return studentService.getAllStudents();
     }
 
-    // Get a student by ID
     @GetMapping("/{id}")
     public ResponseEntity<Student> getStudentById(@PathVariable Integer id) {
         return studentService.getStudentById(id)
@@ -36,34 +35,32 @@ public class StudentController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    // Search for students by last name and first name
     @GetMapping("/search")
     public List<Student> searchStudents(@RequestParam String lastName, @RequestParam String firstName) {
         return studentService.searchStudents(lastName, firstName);
     }
 
-    // Create a new student
     @PostMapping
     public ResponseEntity<Student> createStudent(@Validated @RequestBody Student student) {
-        System.out.println("📥 Received Student: " + student);
+        System.out.println("Received Student: " + student);
 
-        // Έλεγχος ότι έχει δοθεί όνομα σχολής (drivingSchoolName) και δεν είναι κενό
+        
         if (student.getDrivingSchoolName() == null || student.getDrivingSchoolName().trim().isEmpty()) {
             return ResponseEntity.badRequest().build();
         }
 
-        // Δημιουργία του Student με το drivingSchoolName (ως String)
+
         Student savedStudent = studentService.createStudent(student);
         return ResponseEntity.status(HttpStatus.CREATED).body(savedStudent);
     }
 
-    // Update an existing student by ID
+
     @PutMapping("/{id}")
     public ResponseEntity<Student> updateStudent(@PathVariable Integer id, @RequestBody Student updatedStudent) {
         return ResponseEntity.ok(studentService.updateStudent(id, updatedStudent));
     }
 
-    // Delete a student by ID
+    
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteStudent(@PathVariable Integer id) {
         studentService.deleteStudent(id);
