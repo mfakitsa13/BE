@@ -31,12 +31,11 @@ public class Student {
     @Column(nullable = false)
     private LocalDate dateOfBirth;
 
-    // Αποθηκεύουμε το όνομα της σχολής οδήγησης ως String
+
     @Column(name = "driving_school_name", nullable = false)
     @JsonProperty("drivingSchoolName")
     private String drivingSchoolName;
 
-    // Getters & Setters
 
     public int getId() {
         return id;
