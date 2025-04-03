@@ -35,7 +35,7 @@ public class JWTFilter extends OncePerRequestFilter {
             jwt = authorizationHeader.substring(7);
             username = jwtUtil.extractUsername(jwt);
             
-            // Πρόσθεση logging για τον έλεγχο
+        
             System.out.println("JWT Token: " + jwt);
             System.out.println("Username extracted from token: " + username);
         }
@@ -43,7 +43,7 @@ public class JWTFilter extends OncePerRequestFilter {
         if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
             UserDetails userDetails = userDetailsService.loadUserByUsername(username);
 
-            // Πρόσθεση logging πριν από την επαλήθευση του token
+           
             System.out.println("Validating token for user: " + username);
             
             if (jwtUtil.isTokenValid(jwt, userDetails)) {
