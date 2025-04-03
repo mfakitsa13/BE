@@ -70,6 +70,6 @@ public class JWTAuthenticationController {
 	  
 	    @PostConstruct
 	    public void init() {
-	        System.out.println("🚀 JWTAuthenticationController Loaded!");
+	        System.out.println("JWTAuthenticationController Loaded!");
 	    }
 }
