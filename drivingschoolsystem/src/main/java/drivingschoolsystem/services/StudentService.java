@@ -22,17 +22,11 @@ public class StudentService {
         return studentRepository.findById(id);
     }
 
-    public Optional<Student> getStudentByAfm(String afm) {
-        return studentRepository.findByAfm(afm);
-    }
-
+   
     public List<Student> getStudentsBySchoolName(String schoolName) {
         return studentRepository.findByDrivingSchoolName(schoolName);
     }
 
-    public List<Student> searchStudents(String lastName, String firstName) {
-        return studentRepository.findByLastNameContainingIgnoreCaseAndFirstNameContainingIgnoreCase(lastName, firstName);
-    }
 
     public Student createStudent(Student student) {
         return studentRepository.save(student);
