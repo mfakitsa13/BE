@@ -13,7 +13,7 @@ public class DrivingschoolsystemApplication {
 
 	private static final Logger logger = (Logger) LoggerFactory.getLogger(DrivingschoolsystemApplication.class);
 	public static void main(String[] args) {
-		logger.info("🚀 Starting Driving School System...");
+		logger.info(" Starting Driving School System...");
 		SpringApplication.run(DrivingschoolsystemApplication.class, args);
 	}
 
