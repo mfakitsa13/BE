@@ -16,7 +16,7 @@ public class DrivingSchoolController {
 
     public DrivingSchoolController(DrivingSchoolService drivingSchoolService) {
         this.drivingSchoolService = drivingSchoolService;
-        System.out.println("🚗 DrivingSchoolController loaded!");
+        System.out.println("DrivingSchoolController loaded!");
     }
 
     @GetMapping
