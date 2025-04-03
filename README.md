@@ -31,75 +31,70 @@
 
 ### Authentication
 
-#### Login
+#### Αυθεντικοποίηση χρήστη και επιστροφή JWT
 ```http
 POST /api/auth/login
 ```
-Αυθεντικοποίηση χρήστη και επιστροφή JWT.
 
-#### Refresh Token
+#### Ανανέωση του JWT token χρησιμοποιώντας το refresh token
 ```http
 POST /api/auth/refresh
 ```
-Ανανέωση του JWT token χρησιμοποιώντας το refresh token.
 
 ### Driving Schools
 
-#### Get all driving schools
+#### Λήψη όλων των σχολών οδήγησης
 ```http
 GET /api/driving-schools
 ```
-Λήψη όλων των σχολών οδήγησης.
 
-#### Create a new driving school
+#### Δημιουργία νέας σχολής οδήγησης
+
 ```http
 POST /api/driving-schools
 ```
-Δημιουργία νέας σχολής οδήγησης.
 
-#### Get a driving school by ID
+#### Λήψη σχολής οδήγησης με ID
 ```http
 GET /api/driving-schools/{id}
 ```
-Λήψη σχολής οδήγησης με ID.
 
-#### Update a driving school
+#### Ενημέρωση στοιχείων σχολής οδήγησης
 ```http
 PUT /api/driving-schools/{id}
 ```
-Ενημέρωση στοιχείων σχολής οδήγησης.
 
-#### Delete a driving school
+#### Διαγραφή σχολής οδήγησης
 ```http
 DELETE /api/driving-schools/{id}
 ```
-Διαγραφή σχολής οδήγησης.
 
 ### Students
 
-#### Get all students
+#### Λήψη όλων των μαθητών
 ```http
 GET /api/students
 ```
-Λήψη όλων των μαθητών.
 
-#### Get a student by ID
+#### Λήψη μαθητή με ID
 ```http
 GET /api/students/{id}
 ```
-Λήψη μαθητή με ID.
 
-#### Create a new student
+#### Δημιουργία νέου μαθητή
 ```http
 POST /api/students
 ```
-Δημιουργία νέου μαθητή.
 
-#### Update a student
+#### Ενημέρωση στοιχείων μαθητή
 ```http
 PUT /api/students/{id}
 ```
-Ενημέρωση στοιχείων μαθητή.
+
+#### Διαγραφή μαθητή
+```http
+DELETE /api/students/{id}
+```
 
 #### Delete a student
 ```http
