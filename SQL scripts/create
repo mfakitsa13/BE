@@ -6,14 +6,15 @@ CREATE TABLE driving_schools (
     phone VARCHAR(255)
 );
 
---Δημιουργία πίνακα μαθητών
+-- Δημιουργία πίνακα μαθητών με ξένο κλειδί το driving_school_id
 CREATE TABLE students (
     id SERIAL PRIMARY KEY,
     afm VARCHAR(9) UNIQUE NOT NULL,
     first_name VARCHAR(255) NOT NULL,
     last_name VARCHAR(255) NOT NULL,
     date_of_birth DATE NOT NULL,
-    driving_school_name VARCHAR(255) REFERENCES driving_schools(name) ON DELETE CASCADE
+    driving_school_name VARCHAR(255), 
+    driving_school_id INTEGER REFERENCES driving_schools(id) ON DELETE CASCADE
 );
 
 --Δημιουργία πίνακα χρηστών
