@@ -3,8 +3,8 @@ INSERT INTO driving_schools (name, location, phone)
 VALUES ('DriveSafe', 'Γεωργίου 16, Πάτρα', '2101234567');
 
 -- Εισαγωγή μαθητή
-INSERT INTO students (afm, first_name, last_name, date_of_birth, driving_school_name) 
-VALUES ('123456789', 'Giannis', 'Papadopoulos', '2000-05-20', DriveSafe);
+INSERT INTO students (afm, first_name, last_name, date_of_birth, driving_school_name, driving_school_id) 
+VALUES ('664615664', 'Giannis', 'Papadopoulos', '2000-05-20', 'DriverExpert', '211');
 
 -- Εισαγωγή χρήστη
 INSERT INTO users (email, password) 
